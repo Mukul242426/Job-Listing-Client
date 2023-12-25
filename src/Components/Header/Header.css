@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  background-color: #ed5353;
+  border: 2px solid transparent;
+  border-radius: 0 0 2.388rem 2.388rem;
+  padding: 2.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-finder {
+  color: #fff;
+  font-family: "DM Sans";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144.023%; /* 43.207px */
+}
+
+.buttons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.login-button {
+  padding: 0.4rem;
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  background-color: #ed5353;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 33.125px */
+  cursor: pointer;
+}
+
+.register-button{
+    padding:0.4rem;
+    padding-left:0.7rem;
+    padding-right: 0.7rem;
+    border:2px solid transparent;
+    border-radius: 8px;
+    background-color: #fff;
+    color:#ed5353;
+    font-family: 'DM Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.023%; /* 33.125px */
+    cursor: pointer;
+
+}
