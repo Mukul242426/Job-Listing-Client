@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  height: 8.125rem;
   background-color: #ed5353;
   border: 2px solid transparent;
   border-radius: 0 0 2.388rem 2.388rem;
@@ -9,12 +10,13 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .job-finder {
   color: #fff;
   font-family: "DM Sans";
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-style: normal;
   font-weight: 700;
   line-height: 144.023%; /* 43.207px */
@@ -52,10 +54,30 @@
     background-color: #fff;
     color:#ed5353;
     font-family: 'DM Sans';
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 500;
     line-height: 144.023%; /* 33.125px */
     cursor: pointer;
 
+}
+
+.logout-button{
+  color: #FFF;
+font-family: 'DM Sans';
+font-size: 1.325rem;
+font-style: normal;
+font-weight: 500;
+line-height: 144.023%; /* 33.125px */
+cursor: pointer;
+}
+
+.username{
+  color: #FFF;
+  font-family: 'DM Sans';
+  font-size: 1.325rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 33.125px */
+  
 }

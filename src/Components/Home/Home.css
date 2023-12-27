@@ -7,4 +7,99 @@
 .home {
   width: 100%;
   height: 100vh;
+  padding: 12.5rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.filter-container {
+  width: 100%;
+  /* height: 180px; */
+  padding: 2rem 3rem 5rem 4rem;
+  background: #fff;
+  box-shadow: 0px 0px 22px 4px rgba(255, 32, 32, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.search-bar,
+.position-input {
+  width: 100%;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 0.938rem;
+  top: 1.063rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.position-input {
+  color: #9c9c9c;
+  font-family: "DM Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 33.125px */
+  padding: 0.938rem;
+  padding-left: 3.125rem;
+  border: 2px solid #e3e3e3;
+  border-radius: 5px;
+}
+
+.dropdown {
+  text-align: center;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 2px solid #cecece;
+  border-radius: 5px;
+  color: #9c9c9c;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* .drop-icon {
+  margin-left: -10px;
+} */
+
+.skills-container {
+  display: flex;
+  gap: 20px;
+}
+
+.applied-skills {
+  width: 90%;
+  display: flex;
+  gap:20px;
+ flex-wrap: wrap;
+}
+
+.clear-btn-show{
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  color: #ed5353;
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 28.805px */
+}
+
+.clear-btn-hide{
+  display: none;
 }

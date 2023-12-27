@@ -75,6 +75,7 @@ export default function Register() {
           theme: "light",
         });
         localStorage.setItem("token", JSON.stringify(res.data.jwtToken));
+        localStorage.setItem("recruiterName",JSON.stringify(res.data.recruiterName))
         navigate("/");
       })
       .catch((err) => {

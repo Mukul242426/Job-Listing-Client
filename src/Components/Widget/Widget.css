@@ -1,0 +1,36 @@
+.Widget {
+  display: flex;
+  width:20%;
+}
+
+.skillName {
+  background-color: #ffeeee;
+  color: #000;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 23.598px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width:75%;
+}
+
+.close-btn {
+  background-color: #ff6b6b;
+  color: white;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 16.385px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 23.598px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:25%;
+  cursor: pointer;
+}
