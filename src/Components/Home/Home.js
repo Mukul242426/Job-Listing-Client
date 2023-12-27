@@ -4,12 +4,14 @@ import Header from "../Header/Header";
 import image1 from "../../assets/Vector (4).png";
 import axios from "axios";
 import Widget from "../Widget/Widget";
+import JobPost from "../JobPost/JobPost";
 
 export default function Home() {
   const [session, setSession] = useState(false);
   const [position, setPosition] = useState("");
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [options, setOptions] = useState([]);
+  const [jobs,setJobs]=useState([]);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -29,7 +31,10 @@ export default function Home() {
     const url=`http://localhost:4000/jobs?position=${position}&selectedSkills=${selectedSkills.join(',')}`
     console.log(url)
     axios.get(url)
-    .then((res)=>console.log(res.data.jobs))
+    .then((res)=>{
+      console.log(res.data.jobs)
+      setJobs(res.data.jobs)
+    })
     .catch((err)=>console.log(err))
   },[position,selectedSkills])
 
@@ -93,7 +98,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="display-jobs"></div>
+        <div className="display-jobs">
+         {jobs.map((job,index)=>(
+          <JobPost key={job._id} job={job}/>
+         ))}
+        </div>
       </div>
     </>
   );
