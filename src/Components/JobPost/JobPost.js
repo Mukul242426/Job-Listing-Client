@@ -2,6 +2,7 @@ import React from "react";
 import "./JobPost.css";
 
 export default function JobPost({ job, session }) {
+  console.log(session)
   const isValidUrl = (Url) => {
     try {
       new URL(Url);
@@ -38,12 +39,16 @@ export default function JobPost({ job, session }) {
       <div className="col-2">
         <div className="criteria-box">
           {job.skillsRequired.map((skill, index) => (
-            <div className="required-skill">{skill}</div>
+            <div key={index} className="required-skill">{skill}</div>
           ))}
         </div>
         <div className="job-btns">
-          <div className="edit-job"></div>
-          <div className="view-details"></div>
+          <button className={session?'edit-job':'hide'}>
+            Edit Job
+          </button>
+          <button className="view-details">
+            View Details
+          </button>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import axios from "axios";
 import Widget from "../Widget/Widget";
 import JobPost from "../JobPost/JobPost";
 
+
 export default function Home() {
   const [session, setSession] = useState(false);
   const [position, setPosition] = useState("");
