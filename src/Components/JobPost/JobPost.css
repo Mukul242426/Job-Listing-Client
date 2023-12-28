@@ -1,13 +1,90 @@
-.JobPost{
-    display: flex;
-    width: 100%;
-    /* height:160px; */
-    box-shadow: 0px 0px 22px 2px rgba(255, 32, 32, 0.25);
-    padding: 1.5rem;
+.JobPost {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height:160px; */
+  box-shadow: 0px 0px 22px 2px rgba(255, 32, 32, 0.25);
+  padding: 1.5rem;
 }
 
-.company-logo{
-    width: 4.375rem;
-    height: 4.375rem;
-    
+.col-1 {
+  display: flex;
+  gap: 20px;
+  width:40%; /* can change it later to width auto or remove width */
+}
+
+.company-logo {
+  width: 4.375rem;
+  height: 4rem;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.job-role {
+  color: #000;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 89.188%; /* 17.386px */
+}
+
+.job-metaInfo {
+  display: flex;
+  gap: 20px;
+  color: #9c9c9c;
+  font-family: "Roboto";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 89.188%; /* 16.394px */
+}
+
+.job-type {
+  display: flex;
+  gap: 30px;
+  color: #ed5353;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 89.188%; /* 13.466px */
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  width: 60%; /* can remove this width later if needed*/
+}
+
+.criteria-box {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  padding-top:10px;
+  gap: 20px;
+  color: #000;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 22.96px */
+}
+
+.required-skill{
+    display: flex;
+    width:15%;
+    /* width: 90px; */ /* can uncomment this out later as per need */ 
+    justify-content: center;
+    border:1px solid transparent;
+    border-radius:1.5px;
+    background-color: #FEE;
+    padding: 5px;
+    padding-left:10px;
+    padding-right:10px;
 }

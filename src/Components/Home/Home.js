@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         <div className="display-jobs">
          {jobs.map((job,index)=>(
-          <JobPost key={job._id} job={job}/>
+          <JobPost key={job._id} job={job} session={session}/>
          ))}
         </div>
       </div>
