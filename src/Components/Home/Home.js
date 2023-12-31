@@ -5,9 +5,13 @@ import image1 from "../../assets/Vector (4).png";
 import axios from "axios";
 import Widget from "../Widget/Widget";
 import JobPost from "../JobPost/JobPost";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
+
+  const navigate=useNavigate()
+
   const [session, setSession] = useState(false);
   const [position, setPosition] = useState("");
   const [selectedSkills, setSelectedSkills] = useState([]);
@@ -83,21 +87,23 @@ export default function Home() {
             </div>
             <div className="applied-skills">
               {selectedSkills.map((skillName, index) => (
+               
                 <Widget
                   key={index}
                   skillName={skillName}
                   selectedSkills={selectedSkills}
                   setSelectedSkills={setSelectedSkills}
                 />
+               
               ))}
             </div>
-            <div
-              className={selectedSkills.length>0?'clear-btn-show':'clear-btn-hide'}
-              onClick={() => selectedSkills.length > 0 && setSelectedSkills([])}
-            >
-              Clear
-            </div>
+            {session && (<button className="add-btn" onClick={()=>navigate('/create/job')}>
+              + Add Job
+            </button>)}
           </div>
+          {/* {selectedSkills.length>0 && (
+                  <div className="clear-btn-show" onClick={()=>setSelectedSkills([])}>Clear</div>
+                )} */}
         </div>
         <div className="display-jobs">
          {jobs.map((job,index)=>(

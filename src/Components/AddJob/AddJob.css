@@ -1,0 +1,163 @@
+.add-job {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.create-side {
+  width: 60%;
+  height: 100%;
+  padding: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: auto;
+}
+
+.container-heading {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144.023%; /* 57.609px */
+  padding-bottom: 1rem;
+}
+
+.input-container {
+  display: flex;
+}
+
+.field-title {
+  width: 30%;
+  color: black;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.data-field {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #c2c2c2;
+  border-radius: 4px;
+  color: #adadad;
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-left: 1rem;
+}
+
+.jobType,
+.remote {
+  display: flex;
+  text-align: center;
+  padding: 0.625rem;
+  padding-left: 1.6rem;
+  padding-right: 1.5rem;
+  border: 2px solid #cecece;
+  border-radius: 5px;
+  color: #9c9c9c;
+  font-family: "Roboto";
+  font-size: 0.938rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+  width: 20%;
+}
+
+.job-desc,
+.about-comp {
+  width: 30%;
+  color: black;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  padding-top: 10px;
+}
+
+.text-area {
+  resize: none;
+  width: 70%;
+  border: 2px solid #c2c2c2;
+  border-radius: 4px;
+  padding: 10px;
+  color: #adadad;
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-left: 1rem;
+}
+
+.image-side {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+.some-text {
+  position: absolute;
+  top: 5%;
+  left: 11%;
+  color: #fff;
+  font-family: 'DM Sans';
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%; /* 57.609px */
+}
+
+.add-cancel-buttons{
+  display: flex;
+  justify-content: flex-end;
+  gap:1.25rem;
+}
+
+.cancel-opt,.add-opt{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-size:0.938rem;
+  padding: 0.6rem;
+  font-family: 'Roboto';
+  cursor: pointer;
+  /* padding:0.5rem;
+  padding-left:1.4rem;
+  padding-right: 1.4rem; */
+}
+
+.cancel-opt{
+  width: 17%;;
+  border: 1px solid #CECECE;
+  border-radius: 6px;
+  background-color: #FFF;
+  color:#c2c2c2;
+}
+
+.add-opt{
+  width: 17%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: #ED5353;
+  color:#FFF;
+
+}
+
+.image-24 {
+  width: 100%;
+  height: 100%;
+}

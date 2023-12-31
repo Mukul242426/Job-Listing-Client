@@ -211,6 +211,7 @@ export default function Register() {
           </form>
         </div>
         <div className="right">
+        <div className="random-text">Your Personal Job Finder</div>
           <img src={image} className="default" alt="default" />
         </div>
       </div>

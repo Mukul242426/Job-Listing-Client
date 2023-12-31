@@ -8,23 +8,23 @@
   color: #000;
   text-align: center;
   font-family: "DM Sans";
-  font-size: 15px;
+  font-size: 0.938rem;
   font-style: normal;
   font-weight: 500;
   line-height: 144.023%; /* 23.598px */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
   width:75%;
 }
 
 .close-btn {
   background-color: #ff6b6b;
   color: white;
-  text-align: center;
+  /* text-align: center; */
   font-family: DM Sans;
-  font-size: 16.385px;
+  font-size: 1.024rem;
   font-style: normal;
   font-weight: 500;
   line-height: 144.023%; /* 23.598px */

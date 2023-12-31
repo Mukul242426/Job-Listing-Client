@@ -59,14 +59,14 @@
 
 .dropdown {
   text-align: center;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0.625rem;
+  padding-left: 1.6rem;
+  padding-right: 1.5rem;
   border: 2px solid #cecece;
   border-radius: 5px;
   color: #9c9c9c;
   font-family: "Roboto";
-  font-size: 15px;
+  font-size: 0.938rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -79,35 +79,53 @@
 
 .skills-container {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .applied-skills {
-  width: 90%;
+  width: 85%;
   display: flex;
-  gap:20px;
- flex-wrap: wrap;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.clear-btn-show{
+/* .clear-btn-show {
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
   cursor: pointer;
   color: #ed5353;
   text-align: center;
-  font-family: 'DM Sans';
-  font-size: 15px;
+  font-family: "DM Sans";
+  font-size: 0.938rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 144.023%; /* 28.805px */
-}
+  line-height: 144.023%;
+} */
 
-.clear-btn-hide{
-  display: none;
-}
 
-.display-jobs{
+.display-jobs {
   display: flex;
   flex-direction: column;
-  gap:2rem;
+  gap: 2rem;
+}
+
+.add-btn {
+  width: 15%;
+  height: 2.5rem;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 1rem;
+  padding: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border:2px solid transparent;
+  border-radius: 8px;
+  background-color: #ED5353;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
