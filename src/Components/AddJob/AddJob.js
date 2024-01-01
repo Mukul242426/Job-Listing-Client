@@ -7,8 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 function AddJob() {
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     companyName: "",
@@ -42,48 +41,45 @@ function AddJob() {
         ...formData,
         [name]: salary,
       });
-    }
-    else if(name==="skillsRequired"){
-      const correct_value=value.split(',')
+    } else if (name === "skillsRequired") {
+      const correct_value = value.split(",");
       setFormData({
         ...formData,
-        [name]:correct_value
-      })
-    }
-    
-    else
+        [name]: correct_value,
+      });
+    } else
       setFormData({
         ...formData,
         [name]: value,
       });
   };
 
-  const handleClick=()=>{
+  const handleClick = () => {
+    const jwttoken = JSON.parse(localStorage.getItem("token"));
 
-    const jwttoken=JSON.parse(localStorage.getItem('token'))
-
-    axios.post('http://localhost:4000/jobs',formData,{
-      headers:{
-        'Content-Type':'application/json',
-         Authorization:`Bearer ${jwttoken}`
-      }
-    })
-    .then((res)=>{
-     console.log(res)
-     toast.success(res.data.message,{
-      position:'top-left',
-      theme:'dark'
-     })
-     navigate('/')
-    })
-    .catch((err)=>{
-      console.log(err)
-      toast.error(err.response.data.error.message,{
-        position:'top-left',
-        theme:'dark'
+    axios
+      .post("http://localhost:4000/jobs", formData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${jwttoken}`,
+        },
       })
-    })
-  }
+      .then((res) => {
+        console.log(res);
+        toast.success(res.data.message, {
+          position: "top-left",
+          theme: "dark",
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.response.data.error.message, {
+          position: "top-left",
+          theme: "dark",
+        });
+      });
+  };
 
   return (
     <div className="add-job">
@@ -220,8 +216,12 @@ function AddJob() {
           />
         </div>
         <div className="add-cancel-buttons">
-          <button className="cancel-opt" onClick={()=>navigate('/')}>Cancel</button>
-          <button className="add-opt" onClick={handleClick}>+ Add Job</button>
+          <button className="cancel-opt" onClick={() => navigate("/")}>
+            Cancel
+          </button>
+          <button className="add-opt" onClick={handleClick}>
+            + Add Job
+          </button>
         </div>
       </div>
       <div className="image-side">

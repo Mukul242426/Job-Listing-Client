@@ -1,7 +1,11 @@
 import React from "react";
 import "./JobPost.css";
+import { useNavigate } from "react-router-dom";
 
 export default function JobPost({ job, session }) {
+
+  const navigate=useNavigate();
+
   console.log(session)
   const isValidUrl = (Url) => {
     try {
@@ -46,7 +50,7 @@ export default function JobPost({ job, session }) {
           <button className={session?'edit-job':'hide'}>
             Edit Job
           </button>
-          <button className="view-details">
+          <button className="view-details" onClick={()=>navigate(`/view/job/${job._id}`)}>
             View Details
           </button>
         </div>

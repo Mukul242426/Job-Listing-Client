@@ -54,8 +54,12 @@ export default function Home() {
 
   return (
     <>
-      <Header session={session} setSession={setSession} />
+      {/* <Header session={session} setSession={setSession} /> */}
       <div className="home">
+        <div className="big-box-1">
+        <Header session={session} setSession={setSession} />
+        </div>
+         <div className="big-box-2">
         <div className="filter-container">
           <div className="search-bar">
             <img src={image1} alt="search" className="icon" />
@@ -110,6 +114,7 @@ export default function Home() {
           <JobPost key={job._id} job={job} session={session}/>
          ))}
         </div>
+      </div>
       </div>
     </>
   );

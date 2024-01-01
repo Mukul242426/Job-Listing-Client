@@ -15,7 +15,7 @@
 
 .company-logo {
   width: 4.375rem;
-  height: 4rem;
+  height: 3.75rem;
 }
 
 .job-details {
@@ -80,7 +80,7 @@
 
 .required-skill {
   display: flex;
-  width: 15%;
+  min-width: 15%;
   /* width: 90px; */ /* can uncomment this out later as per need */
   justify-content: center;
   border: 1px solid transparent;
