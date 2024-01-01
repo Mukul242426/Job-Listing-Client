@@ -6,7 +6,6 @@ export default function JobPost({ job, session }) {
 
   const navigate=useNavigate();
 
-  console.log(session)
   const isValidUrl = (Url) => {
     try {
       new URL(Url);
@@ -47,7 +46,7 @@ export default function JobPost({ job, session }) {
           ))}
         </div>
         <div className="job-btns">
-          <button className={session?'edit-job':'hide'}>
+          <button className={session?'edit-job':'hide'} onClick={()=>navigate(`/edit/job/${job._id}`)}>
             Edit Job
           </button>
           <button className="view-details" onClick={()=>navigate(`/view/job/${job._id}`)}>

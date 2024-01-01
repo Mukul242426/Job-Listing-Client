@@ -91,6 +91,10 @@
   line-height: 144.023%; /* 28.245px */
 }
 
+.edit-button-hide{
+  display: none;
+}
+
 .details-row-2 {
   color: #ed5353;
   font-family: "DM Sans";

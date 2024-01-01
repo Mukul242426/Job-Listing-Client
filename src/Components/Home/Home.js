@@ -109,10 +109,10 @@ export default function Home() {
                   <div className="clear-btn-show" onClick={()=>setSelectedSkills([])}>Clear</div>
                 )} */}
         </div>
-        <div className="display-jobs">
-         {jobs.map((job,index)=>(
-          <JobPost key={job._id} job={job} session={session}/>
-         ))}
+        <div className={jobs.length>0?"display-jobs":'no-match'}>
+          {jobs.length>0 ? jobs.map((job,index)=>(
+            <JobPost key={job._id} job={job} session={session}/>
+          )):'No matching jobs found'}
         </div>
       </div>
       </div>

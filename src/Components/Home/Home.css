@@ -143,3 +143,12 @@
   padding-bottom: 2rem;
   
 }
+
+.no-match{
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-family: 'DM Sans';
+  color:#808080;
+  font-style: italic;
+}

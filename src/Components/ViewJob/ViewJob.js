@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./ViewJob.css";
 import Header from "../Header/Header";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function ViewJob() {
+
+  const navigate=useNavigate()
+
   const { jobId } = useParams();
 
   const [session, setSession] = useState(false);
   const [data, setData] = useState({});
-  console.log(data.position);
+  // console.log(data.position);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -47,7 +50,7 @@ function ViewJob() {
                 <div className="job-profile">
                   {data && data.position && data.position}
                 </div>
-                <button className="edit-button">Edit Job</button>
+                <button className={session?'edit-button':'edit-button-hide'}  onClick={()=>navigate(`/edit/job/${jobId}`)}>Edit Job</button>
               </div>
               <div className="details-row-2">
                 {data && data.location && data.location}

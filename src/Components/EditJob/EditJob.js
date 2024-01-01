@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import "./AddJob.css";
+import React, { useEffect, useState } from "react";
+import "./EditJob.css";
 import image from "../../assets/Image 24.png";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddJob() {
+function EditJob() {
   const navigate = useNavigate();
+
+  const { jobId } = useParams();
 
   const [formData, setFormData] = useState({
     companyName: "",
@@ -22,6 +24,16 @@ function AddJob() {
     skillsRequired: [],
     information: "",
   });
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/jobs/${jobId}`)
+      .then((res) => {
+        // console.log(res)
+        setFormData(res.data.job)
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,36 +67,33 @@ function AddJob() {
   };
 
   const handleClick = () => {
-    const jwttoken = JSON.parse(localStorage.getItem("token"));
+    const jwttoken=JSON.parse(localStorage.getItem('token'))
 
-    axios
-      .post("http://localhost:4000/jobs", formData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${jwttoken}`,
-        },
+    axios.put(`http://localhost:4000/jobs/${jobId}`,formData,{
+      headers:{
+        'Content-Type':'application/json',
+        Authorization:`Bearer ${jwttoken}`
+      }
+    })
+    .then((res)=>{
+      toast.success(res.data.message,{
+        position:'top-left',
+        theme:'dark'
       })
-      .then((res) => {
-        console.log(res);
-        toast.success(res.data.message, {
-          position: "top-left",
-          theme: "dark",
-        });
-        navigate("/");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.response.data.error.message, {
-          position: "top-left",
-          theme: "dark",
-        });
-      });
+      navigate('/')
+    })
+    .catch((err)=>{
+     toast.error(err.response.data.error.message,{
+      position:'top-left',
+      theme:'dark'
+     })
+    })
   };
 
   return (
     <div className="add-job">
       <div className="create-side">
-        <div className="container-heading">Add job description</div>
+        <div className="container-heading">Edit job description</div>
         <div className="input-container">
           <div className="field-title">Company Name</div>
           <input
@@ -220,16 +229,16 @@ function AddJob() {
             Cancel
           </button>
           <button className="add-opt" onClick={handleClick}>
-            + Add Job
+            Edit Job
           </button>
         </div>
       </div>
       <div className="image-side">
         <img src={image} alt="add-job" className="image-24" />
-        <div className="some-text">Recruiter add job details here</div>
+        <div className="some-text">Recruiter edit job details here</div>
       </div>
     </div>
   );
 }
 
-export default AddJob;
+export default EditJob;
