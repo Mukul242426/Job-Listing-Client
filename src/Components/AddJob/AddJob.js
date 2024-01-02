@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { FRONTEND_URL } from "../../utils/utils";
 
 function AddJob() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function AddJob() {
     const jwttoken = JSON.parse(localStorage.getItem("token"));
 
     axios
-      .post("http://localhost:4000/jobs", formData, {
+      .post(`${FRONTEND_URL}/jobs`, formData, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${jwttoken}`,

@@ -3,6 +3,7 @@ import "./ViewJob.css";
 import Header from "../Header/Header";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { FRONTEND_URL } from "../../utils/utils";
 
 function ViewJob() {
 
@@ -20,7 +21,7 @@ function ViewJob() {
     }
 
     axios
-      .get(`http://localhost:4000/jobs/${jobId}`)
+      .get(`${FRONTEND_URL}/jobs/${jobId}`)
       .then((res) => {
         console.log(res.data.job);
         setData(res.data.job);

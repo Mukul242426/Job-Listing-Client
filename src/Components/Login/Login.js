@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import validator from "validator";
+import {FRONTEND_URL} from '../../utils/utils'
 
 export default function Register() {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ export default function Register() {
     }
 
     axios
-      .post("http://localhost:4000/login", formData)
+      .post(`${FRONTEND_URL}/login`, formData)
       .then((res) => {
         console.log(res);
         toast.success(res.data.message, {

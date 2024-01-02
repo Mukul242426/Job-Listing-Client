@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { FRONTEND_URL } from "../../utils/utils";
 
 function EditJob() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function EditJob() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/jobs/${jobId}`)
+      .get(`${FRONTEND_URL}/jobs/${jobId}`)
       .then((res) => {
         // console.log(res)
         setFormData(res.data.job)
@@ -69,7 +70,7 @@ function EditJob() {
   const handleClick = () => {
     const jwttoken=JSON.parse(localStorage.getItem('token'))
 
-    axios.put(`http://localhost:4000/jobs/${jobId}`,formData,{
+    axios.put(`${FRONTEND_URL}/jobs/${jobId}`,formData,{
       headers:{
         'Content-Type':'application/json',
         Authorization:`Bearer ${jwttoken}`

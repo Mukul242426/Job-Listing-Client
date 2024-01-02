@@ -6,6 +6,7 @@ import axios from "axios";
 import Widget from "../Widget/Widget";
 import JobPost from "../JobPost/JobPost";
 import { useNavigate } from "react-router-dom";
+import {FRONTEND_URL} from '../../utils/utils'
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
     }
 
     axios
-      .get("http://localhost:4000/skills")
+      .get(`${FRONTEND_URL}/skills`)
       .then((res) => {
         setOptions(res.data.skills);
       })
@@ -33,7 +34,7 @@ export default function Home() {
 
   useEffect(()=>{
 
-    const url=`http://localhost:4000/jobs?position=${position}&selectedSkills=${selectedSkills.join(',')}`
+    const url=`${FRONTEND_URL}/jobs?position=${position}&selectedSkills=${selectedSkills.join(',')}`
     console.log(url)
     axios.get(url)
     .then((res)=>{
