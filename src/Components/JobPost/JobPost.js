@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./JobPost.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 
-export default function JobPost({ job, session }) {
+export default function JobPost({ job }) {
+
+  const {isLoggedIn}=useContext(UserContext);
 
   const navigate=useNavigate();
 
@@ -46,7 +49,7 @@ export default function JobPost({ job, session }) {
           ))}
         </div>
         <div className="job-btns">
-          <button className={session?'edit-job':'hide'} onClick={()=>navigate(`/edit/job/${job._id}`)}>
+          <button className={isLoggedIn?'edit-job':'hide'} onClick={()=>navigate(`/edit/job/${job._id}`)}>
             Edit Job
           </button>
           <button className="view-details" onClick={()=>navigate(`/view/job/${job._id}`)}>
