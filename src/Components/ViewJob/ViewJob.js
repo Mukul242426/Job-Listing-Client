@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./ViewJob.css";
 import Header from "../Header/Header";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FRONTEND_URL } from "../../utils/utils";
+import { UserContext } from "../../contexts/UserContext";
 
 function ViewJob() {
+
+  const {isLoggedIn}=useContext(UserContext)
 
   const navigate=useNavigate()
 
   const { jobId } = useParams();
 
-  const [session, setSession] = useState(false);
+  // const [session, setSession] = useState(false);
   const [data, setData] = useState({});
   // console.log(data.position);
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setSession(true);
-    }
+    // if (localStorage.getItem("token")) {
+    //   setSession(true);
+    // }
 
     axios
       .get(`${FRONTEND_URL}/jobs/${jobId}`)
@@ -33,7 +36,8 @@ function ViewJob() {
     <>
       <div className="view-job">
         <div className="part-1">
-          <Header session={session} setSession={setSession} />
+          {/* <Header session={session} setSession={setSession} /> */}
+          <Header/>
         </div>
         <div className="part-2">
           <div className="heading-part">
@@ -51,7 +55,7 @@ function ViewJob() {
                 <div className="job-profile">
                   {data && data.position && data.position}
                 </div>
-                <button className={session?'edit-button':'edit-button-hide'}  onClick={()=>navigate(`/edit/job/${jobId}`)}>Edit Job</button>
+                <button className={isLoggedIn?'edit-button':'edit-button-hide'}  onClick={()=>navigate(`/edit/job/${jobId}`)}>Edit Job</button>
               </div>
               <div className="details-row-2">
                 {data && data.location && data.location}

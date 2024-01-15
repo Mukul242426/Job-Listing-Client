@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Home.css";
 import Header from "../Header/Header";
 import image1 from "../../assets/Vector (4).png";
@@ -7,23 +7,25 @@ import Widget from "../Widget/Widget";
 import JobPost from "../JobPost/JobPost";
 import { useNavigate } from "react-router-dom";
 import {FRONTEND_URL} from '../../utils/utils'
+import { UserContext } from "../../contexts/UserContext";
 
 
 export default function Home() {
 
+  const {isLoggedIn}=useContext(UserContext);
+
   const navigate=useNavigate()
 
-  const [session, setSession] = useState(false);
+  // const [session, setSession] = useState(false);
   const [position, setPosition] = useState("");
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [options, setOptions] = useState([]);
   const [jobs,setJobs]=useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setSession(true);
-    }
-
+    // if (localStorage.getItem("token")) {
+    //   setSession(true);
+    // }
     axios
       .get(`${FRONTEND_URL}/skills`)
       .then((res) => {
@@ -58,7 +60,8 @@ export default function Home() {
       {/* <Header session={session} setSession={setSession} /> */}
       <div className="home">
         <div className="big-box-1">
-        <Header session={session} setSession={setSession} />
+        {/* <Header session={session} setSession={setSession} /> */}
+        <Header/>
         </div>
          <div className="big-box-2">
         <div className="filter-container">
@@ -102,7 +105,7 @@ export default function Home() {
                
               ))}
             </div>
-            {session && (<button className="add-btn" onClick={()=>navigate('/create/job')}>
+            {isLoggedIn && (<button className="add-btn" onClick={()=>navigate('/create/job')}>
               + Add Job
             </button>)}
           </div>
@@ -112,7 +115,8 @@ export default function Home() {
         </div>
         <div className={jobs.length>0?"display-jobs":'no-match'}>
           {jobs.length>0 ? jobs.map((job,index)=>(
-            <JobPost key={job._id} job={job} session={session}/>
+            // <JobPost key={job._id} job={job} session={session}/>
+            <JobPost key={job._id} job={job}/>
           )):'No matching jobs found'}
         </div>
       </div>

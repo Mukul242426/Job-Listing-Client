@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import validator from "validator";
 import "./Register.css";
 import image from "../../assets/image 466.png";
@@ -8,9 +8,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FRONTEND_URL } from "../../utils/utils";
+import { UserContext } from "../../contexts/UserContext";
 
 
 export default function Register() {
+
+  const {setIsLoggedIn}=useContext(UserContext)
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -114,6 +118,7 @@ export default function Register() {
         });
         localStorage.setItem("token", JSON.stringify(res.data.jwtToken));
         localStorage.setItem("recruiterName",JSON.stringify(res.data.recruiterName))
+        setIsLoggedIn(true)
         navigate("/");
       })
       .catch((err) => {
